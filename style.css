@@ -1,0 +1,207 @@
+:root {
+  /* ### Primary */
+
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayishblue: hsl(217, 19%, 35%);
+  --Very-dark-blackishblue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  /* ### Neutral */
+
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayishblue: hsl(210, 46%, 95%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100vh;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--Light-grayishblue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.main {
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  grid-template-areas:
+    'a a b c'
+    'd e e c';
+}
+.card {
+  background-color: gray;
+  border-radius: 10px;
+  padding: 25px;
+}
+.card .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card .profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card .profile .name {
+  font-weight: 600;
+  color: var(--Light-gray);
+}
+.card .profile .name h3 {
+  font-size: 17px;
+}
+.card .profile p {
+  font-size: 12px;
+  opacity: 50%;
+}
+p {
+  color: var(--Light-gray);
+}
+.card_one {
+  grid-area: a;
+  background: url('./images/bg-pattern-quotation.svg') var(--Moderate-violet);
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: 85% 0%;
+}
+.card_one .profile img,
+.card_five .profile img {
+  border: 2px solid hsla(263, 66%, 75%, 0.953);
+}
+.card h1 {
+  color: var(--Light-grayishblue);
+  font-size: 25px;
+  padding: 15px 0;
+}
+.card p {
+  opacity: 70%;
+  font-size: 15px;
+}
+.card_two {
+  grid-area: b;
+  background-color: var(--Very-dark-grayishblue);
+}
+.card_three {
+  grid-area: c;
+}
+.card_fore {
+  grid-area: d;
+}
+.card_fore h1 {
+  color: rebeccapurple;
+}
+
+.card_five {
+  grid-area: e;
+  background-color: var(--Very-dark-blackishblue);
+}
+.card_three,
+.card_fore {
+  background-color: var(--White);
+  box-shadow: 20px 20px 20px -15px var(--Light-gray);
+}
+.card_three h1,
+.card_three h3,
+.card_three p,
+.card_fore h1,
+.card_fore h3,
+.card_fore p {
+  color: var(--Very-dark-grayishblue);
+}
+
+.copyright {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+.attribution {
+  text-align: center;
+  color: rgb(19, 4, 4);
+  font-size: 18px;
+}
+.attribution a {
+  color: rgb(154, 112, 5);
+}
+.attribution a:hover {
+  color: rgb(2, 104, 29);
+}
+.attribution span {
+  color: rgb(242, 0, 255);
+  font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  html {
+    height: auto;
+  }
+  .main {
+    max-width: 600px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    gap: 30px;
+    grid-template-areas:
+      'a'
+      'b'
+      'd'
+      'e'
+      'c';
+  }
+  .container {
+    position: relative;
+    padding: 10px 0 50px 0;
+  }
+}
+
+@media (max-width: 460px) {
+  .main {
+    gap: 15px;
+  }
+  .card {
+    padding: 15px;
+  }
+  .card .profile {
+    gap: 5px;
+  }
+  .card .profile img {
+    height: 35px;
+    width: 35px;
+  }
+  .card .profile .name h3 {
+    font-size: 15px;
+  }
+  .card .profile p {
+    font-size: 11px;
+  }
+  .card_one {
+    background-size: auto;
+  }
+  .card h1 {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+  .card p {
+    font-size: 13px;
+  }
+  .container {
+    padding: 10px 0 50px 0;
+  }
+  .copyright {
+    bottom: 5px;
+  }
+  .copyright p {
+    font-size: 15px;
+  }
+}
